@@ -1,0 +1,32 @@
+# FastAPI + Server
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+
+# AI / NLP (FinBERT & general transformers)
+transformers
+sentencepiece
+
+# PyTorch (CPU version - most stable for Windows)
+
+
+# Quantum Optimization
+#qiskit
+#qiskit-aer
+
+# Data Science
+numpy
+pandas
+scipy
+
+# Market Data
+yfinance
+requests
+
+# CORS support for frontend
+fastapi[all]
+
+# Optional (if available for install via pip)
+# horizon
+# nanda

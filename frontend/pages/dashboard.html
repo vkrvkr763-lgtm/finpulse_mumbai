@@ -23,8 +23,16 @@
         <a href="digital_twin.html" class="hover:text-white">AI insights</a>
       </nav>
 
+      <!-- ADD LOGOUT BUTTON HERE -->
       <div class="mt-auto pt-10">
-        <p class="text-gray-500 text-sm">v1.0 — FinPulse</p>
+        <button onclick="logout()" 
+                class="w-full bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg transition duration-200 flex items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          Logout
+        </button>
+        <p class="text-gray-500 text-sm mt-3 text-center">v1.0 — FinPulse</p>
       </div>
     </aside>
 
@@ -65,13 +73,12 @@
         </div>
 
         <!-- AI QUICK INSIGHTS -->
-<div id="insightsBox"
-     onclick="goTo('digital_twin.html')"
-     class="col-span-6 bg-[#111522] p-5 rounded-xl border border-gray-800 cursor-pointer hover:border-purple-500 transition">
-  <h3 class="text-xl font-semibold mb-3 text-purple-400">AI Quick Insights</h3>
-  <div id="insightsList" class="space-y-3 text-sm">Loading...</div>
-</div>
-
+        <div id="insightsBox"
+             onclick="goTo('digital_twin.html')"
+             class="col-span-6 bg-[#111522] p-5 rounded-xl border border-gray-800 cursor-pointer hover:border-purple-500 transition">
+          <h3 class="text-xl font-semibold mb-3 text-purple-400">AI Quick Insights</h3>
+          <div id="insightsList" class="space-y-3 text-sm">Loading...</div>
+        </div>
 
       </div>
     </main>
@@ -79,11 +86,37 @@
 
   <script src="../assets/js/dashboard.js"></script>
 
-  <!-- Global page navigation -->
+  <!-- Global page navigation and logout function -->
   <script>
     function goTo(page) {
       window.location.href = page;
     }
+
+    // Logout function
+    function logout() {
+      if (confirm('Are you sure you want to logout?')) {
+        // Show loading message
+        const logoutBtn = document.querySelector('button[onclick="logout()"]');
+        if (logoutBtn) {
+          logoutBtn.innerHTML = '<span>Logging out...</span>';
+          logoutBtn.disabled = true;
+        }
+        
+        // Simulate logout process
+        setTimeout(() => {
+          // Redirect to index.html (landing page)
+          window.location.href = 'index.html';
+        }, 1000);
+      }
+    }
+
+    // Optional: Add keyboard shortcut for logout (Ctrl+L)
+    document.addEventListener('keydown', function(event) {
+      if (event.ctrlKey && event.key === 'l') {
+        event.preventDefault();
+        logout();
+      }
+    });
   </script>
 
 </body>

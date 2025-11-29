@@ -43,9 +43,13 @@ cd frontend
 python -m http.server 5500
 
 Frontend URL:  
-http://localhost:5500/index.html
+http://localhost:5500/pages
 
----
+# Hardcorded Details:
+User 1:
+Email: user1@finpulse.com
+Password: password123
 
-## Team
-
+User 2:
+Email: user2@finpulse.com
+Password: password456

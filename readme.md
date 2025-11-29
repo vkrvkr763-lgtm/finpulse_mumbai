@@ -121,4 +121,5 @@ Automated portfolio rebalancing
 User login + personalization
 Historical backtesting
 Full AI advisor
+
 Real-time market alerts

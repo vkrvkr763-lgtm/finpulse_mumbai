@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>FinPulse — Risk Radar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-[#0b0f19] text-gray-200">
+  <div class="flex h-screen w-full">
+
+    <!-- SIDEBAR (copy same sidebar markup from dashboard) -->
+    <aside class="w-64 bg-[#111522] border-r border-gray-800 p-5 flex flex-col">
+      <h1 class="text-2xl font-bold text-teal-400 mb-8">FinPulse</h1>
+      <nav class="flex flex-col gap-4 text-gray-400">
+        <a href="dashboard.html" class="hover:text-white">Dashboard</a>
+        <a href="opportunities.html" class="hover:text-white">Opportunities</a>
+        <a class="text-white">Risk Radar</a>
+        <a href="hedge_layer.html" class="hover:text-white">Hedge Layer</a>
+        <a href="action_center.html" class="hover:text-white">Action Center</a>
+        <a href="digital_twin.html" class="hover:text-white">AI insights</a>
+      </nav>
+      <div class="mt-auto pt-10">
+        <p class="text-gray-500 text-sm">v1.0 — FinPulse</p>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="flex-1 overflow-y-auto p-6">
+      <h2 class="text-3xl font-bold mb-1">Risk Radar</h2>
+      <p class="text-gray-400 mb-6">Correlation · Volatility · Exposure clusters — detailed risk analysis</p>
+
+      <div class="grid grid-cols-12 gap-6">
+
+        <!-- Left: Heatmap & clusters -->
+        <div class="col-span-8 space-y-6">
+          <div class="bg-[#111522] p-5 rounded-xl border border-gray-800">
+            <h3 class="text-lg font-semibold mb-3">Risk Heatmap (clusters)</h3>
+            <div id="heatmapContainer" class="grid grid-cols-4 gap-3"></div>
+          </div>
+
+          <div class="bg-[#111522] p-5 rounded-xl border border-gray-800">
+            <h3 class="text-lg font-semibold mb-3">Correlation Matrix (sample)</h3>
+            <canvas id="corrMatrix" height="240"></canvas>
+          </div>
+        </div>
+
+        <!-- Right: Volatility list & details -->
+        <div class="col-span-4 space-y-6">
+          <div class="bg-[#111522] p-5 rounded-xl border border-gray-800">
+            <h3 class="text-lg font-semibold mb-3 text-yellow-400">Top Volatility</h3>
+            <div id="volList"></div>
+          </div>
+
+          <div class="bg-[#111522] p-5 rounded-xl border border-gray-800">
+            <h3 class="text-lg font-semibold mb-3 text-blue-400">Scenario Stress Test</h3>
+            <p class="text-sm text-gray-300">Run pre-built stress scenarios and see portfolio VaR impact.</p>
+            <div class="mt-4">
+              <select id="scenarioSelect" class="w-full p-2 bg-[#0f1724] border border-gray-700 rounded">
+                <option value="rate_hike">Rate Hike (shock)</option>
+                <option value="oil_spike">Energy shock (oil spike)</option>
+                <option value="liquidity">Liquidity squeeze</option>
+              </select>
+              <button id="runScenario" class="mt-3 w-full bg-teal-500 text-black font-semibold p-2 rounded">Run Scenario</button>
+              <div id="scenarioResult" class="mt-3 text-sm text-gray-300"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/risk_radar.js"></script>
+</body>
+</html>

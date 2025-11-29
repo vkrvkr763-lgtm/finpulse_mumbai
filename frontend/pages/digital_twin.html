@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FinPulse — Digital Twin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0b0f19] text-gray-200">
+  <div class="flex h-screen w-full">
+
+    <!-- =============== SIDEBAR =============== -->
+    <aside class="w-64 bg-[#111522] border-r border-gray-800 p-5 flex flex-col">
+      <h1 class="text-2xl font-bold text-teal-400 mb-8">FinPulse</h1>
+
+      <nav class="flex flex-col gap-4 text-gray-400">
+        <a href="dashboard.html" class="hover:text-white">Dashboard</a>
+        <a href="opportunities.html" class="hover:text-white">Opportunities</a>
+        <a href="risk_radar.html" class="hover:text-white">Risk Radar</a>
+        <a href="hedge_layer.html" class="hover:text-white">Hedge Layer</a>
+        <a href="action_center.html" class="hover:text-white">Action Center</a>
+        <a class="text-white">AI insights</a>
+      </nav>
+
+      <div class="mt-auto pt-10">
+        <p class="text-gray-500 text-sm">v1.0 — FinPulse</p>
+      </div>
+    </aside>
+
+    <!-- =============== MAIN CONTENT =============== -->
+    <main class="flex-1 overflow-y-auto p-6">
+
+      <h2 class="text-4xl font-bold mb-1">AI QUICK INSIGHTS</h2>
+      <p class="text-gray-400 mb-8">AI-driven replica of your portfolio + simulated sentiment intelligence</p>
+
+      <!-- BOX WRAPPER -->
+      <div class="bg-[#111522] p-6 rounded-xl border border-gray-800">
+
+        <h3 class="text-2xl font-semibold mb-4 text-purple-400">AI Quick Insights</h3>
+
+        <div id="twinInsights" class="p-4 bg-[#0f1724] rounded border border-gray-700 text-sm">
+          Fetching insights...
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../assets/js/digital_twin.js"></script>
+</body>
+</html>

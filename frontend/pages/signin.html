@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Sign In - FinPulse</title>
+</head>
+
+<body class="bg-gray-900 flex items-center justify-center h-screen text-white">
+
+  <div class="bg-gray-800 p-10 rounded-2xl w-96 shadow-xl">
+    <h2 class="text-3xl font-bold mb-6 text-center">Welcome Back</h2>
+
+    <input id="email" type="email" placeholder="Email" class="w-full mb-4 p-3 bg-gray-700 rounded">
+    <input id="password" type="password" placeholder="Password" class="w-full mb-4 p-3 bg-gray-700 rounded">
+
+    <button onclick="loginNow()"
+      class="w-full bg-cyan-500 py-3 rounded-xl text-black font-semibold hover:bg-cyan-400">
+      Sign In
+    </button>
+
+    <p class="text-center mt-4 text-gray-400">
+      New here? <a href="signup.html" class="text-cyan-400 hover:underline">Create Account</a>
+    </p>
+  </div>
+
+  <script>
+    function loginNow() {
+      // NO validation, NO API.
+      // Always redirect to dashboard.
+      window.location.href = "dashboard.html";
+    }
+  </script>
+
+</body>
+</html>

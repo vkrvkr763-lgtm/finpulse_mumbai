@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FinPulse – Opportunities</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-[#0b0f19] text-gray-200">
+  <div class="flex h-screen w-full">
+
+    <!-- SIDEBAR -->
+    <aside class="w-64 bg-[#111522] border-r border-gray-800 p-5 flex flex-col">
+      <h1 class="text-2xl font-bold text-teal-400 mb-8">FinPulse</h1>
+
+      <nav class="flex flex-col gap-4 text-gray-400">
+        <a href="dashboard.html" class="hover:text-white">Dashboard</a>
+        <a class="text-white">Opportunities</a>
+        <a href="risk_radar.html" class="hover:text-white">Risk Radar</a>
+        <a href="hedge_layer.html" class="hover:text-white">Hedge Layer</a>
+        <a href="action_center.html" class="hover:text-white">Action Center</a>
+        <a href="digital_twin.html" class="hover:text-white">AI insights</a>
+      </nav>
+
+      <div class="mt-auto pt-10">
+        <p class="text-gray-500 text-sm">v1.0 — FinPulse</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 overflow-y-auto p-10">
+
+      <h1 class="text-4xl font-bold mb-2">Opportunities</h1>
+      <p class="text-gray-400 mb-8 text-lg">
+        Real-time AI opportunity detection powered by Scout Agent
+      </p>
+
+      <!-- LIST -->
+      <div id="oppContainer" class="grid grid-cols-2 gap-6"></div>
+
+    </main>
+  </div>
+
+  <script src="../assets/js/opportunities.js"></script>
+</body>
+</html>

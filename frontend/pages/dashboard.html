@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FinPulse Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-[#0b0f19] text-gray-200">
+  <div class="flex h-screen w-full">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="w-64 bg-[#111522] border-r border-gray-800 p-5 flex flex-col">
+      <h1 class="text-2xl font-bold text-teal-400 mb-8">FinPulse</h1>
+
+      <nav class="flex flex-col gap-4 text-gray-400">
+        <a class="text-white">Dashboard</a>
+        <a href="opportunities.html" class="hover:text-white">Opportunities</a>
+        <a href="risk_radar.html" class="hover:text-white">Risk Radar</a>
+        <a href="hedge_layer.html" class="hover:text-white">Hedge Layer</a>
+        <a href="action_center.html" class="hover:text-white">Action Center</a>
+        <a href="digital_twin.html" class="hover:text-white">AI insights</a>
+      </nav>
+
+      <div class="mt-auto pt-10">
+        <p class="text-gray-500 text-sm">v1.0 — FinPulse</p>
+      </div>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="flex-1 overflow-y-auto p-6">
+
+      <h2 class="text-4xl font-bold mb-1">Dashboard</h2>
+      <p class="text-gray-400 mb-8">AI + Quantum Investment Intelligence</p>
+
+      <div class="grid grid-cols-12 gap-6">
+
+        <!-- ALLOCATION MIX -->
+        <div onclick="goTo('risk_radar.html')"
+             class="col-span-4 bg-[#111522] p-5 rounded-xl border border-gray-800 cursor-pointer hover:border-teal-500 transition">
+          <h3 class="text-xl font-semibold mb-3">Allocation Mix</h3>
+          <canvas id="allocChart" height="220"></canvas>
+        </div>
+
+        <!-- PERFORMANCE STREAM -->
+        <div onclick="goTo('digital_twin.html')"
+             class="col-span-4 bg-[#111522] p-5 rounded-xl border border-gray-800 cursor-pointer hover:border-teal-500 transition">
+          <h3 class="text-xl font-semibold mb-3">Performance Stream</h3>
+          <canvas id="perfChart" height="220"></canvas>
+        </div>
+
+        <!-- QUANTUM ENGINE -->
+        <div onclick="goTo('quantum_console.html')"
+             class="col-span-4 bg-[#111522] p-5 rounded-xl border border-gray-800 cursor-pointer hover:border-blue-500 transition">
+          <h3 class="text-xl font-semibold mb-3 text-blue-400">Quantum Engine (QAOA)</h3>
+          <p id="quantumResult" class="text-gray-300 text-sm">Loading...</p>
+        </div>
+
+        <!-- OPPORTUNITIES -->
+        <div onclick="goTo('opportunities.html')"
+             class="col-span-6 bg-[#111522] p-5 rounded-xl border border-gray-800 cursor-pointer hover:border-green-500 transition">
+          <h3 class="text-xl font-semibold text-green-400 mb-3">Opportunities Detected</h3>
+          <div id="oppList" class="space-y-3 text-sm"></div>
+        </div>
+
+        <!-- AI QUICK INSIGHTS -->
+<div id="insightsBox"
+     onclick="goTo('digital_twin.html')"
+     class="col-span-6 bg-[#111522] p-5 rounded-xl border border-gray-800 cursor-pointer hover:border-purple-500 transition">
+  <h3 class="text-xl font-semibold mb-3 text-purple-400">AI Quick Insights</h3>
+  <div id="insightsList" class="space-y-3 text-sm">Loading...</div>
+</div>
+
+
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/dashboard.js"></script>
+
+  <!-- Global page navigation -->
+  <script>
+    function goTo(page) {
+      window.location.href = page;
+    }
+  </script>
+
+</body>
+</html>
